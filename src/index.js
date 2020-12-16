@@ -71,6 +71,20 @@ module.exports = class client extends EventEmitter{
     return await this.fetch(url, null, 'DELETE');
   }
 
+  async respondToInteraction(message, token, id){
+
+    if(!token){
+      throw new Error("[SlashJS Client] No responce token provided");
+    }
+
+    if(!message.message){ throw new Error("[SlashJS Client] No Message object provided!"); }
+
+    let url = `https://discord.com/api/v8/interactions/${id}/${token}/callback`;
+    return await this.fetch(url, {
+      type: 4,
+      data: message.message
+      }, 'POST');
+  }
   
   async fetch(endpoint, body, method){
     let res = await axios({
