@@ -1,20 +1,17 @@
-const optionBuilder = require("../src/util/options");
-const Command = require("../src/util/command");
-const OptionsBuilder = require("../src/util/options");
-const Client = require("../src/index");
+const slash = require('DiscordSlash')
 
-const client = new Client(
-  "token here",
-  "client id"
+const client = new slash.Client(
+  "Bot toekn",
+  "Client ID"
 );
 
-const option = new OptionsBuilder()
+const option = new slash.OptionsBuilder()
   .name("Cool")
   .description("Cool Description")
   .required(true)
   .type(3);
 
-const command = new Command()
+const command = new slash.Command()
   .name("lul")
   .description("just a test command");
 

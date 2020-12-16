@@ -1,8 +1,8 @@
 {
-  "name": "discord-slash-js-wrapper",
+  "name": "discord-slash",
   "version": "1.0.0",
-  "description": "A Simple Discord \"Slash\" Server JS Wrapper",
-  "main": "index.js",
+  "description": "A Simple Discord \"Slash\" JS Wrapper",
+  "main": "./src/index.js",
   "dependencies": {
     "axios": "^0.21.0"
   },
