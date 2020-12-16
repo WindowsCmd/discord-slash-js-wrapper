@@ -4,8 +4,8 @@ const OptionsBuilder = require("../src/util/options");
 const Client = require("../src/index");
 
 const client = new Client(
-  "NzMyNzgzMjk3ODcyMDAzMTE0.Xw5noA.F40dTsoNw9Wkr42RvdxSEpJ5NXE",
-  "732783297872003114"
+  "token here",
+  "client id"
 );
 
 const option = new OptionsBuilder()
