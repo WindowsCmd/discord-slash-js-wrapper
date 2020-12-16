@@ -3,7 +3,7 @@ A Node.js Discord API Wrapper for Slash commands
 
 Example On Setting a command and getting a list of commands:
 ```js
-const slash = require('DiscordSlash')
+const slash = require('discord-slash')
 
 const client = new slash.Client(
   "Bot toekn",
