@@ -69,6 +69,11 @@ module.exports = class OptionsBuilder {
     return this;
   }
 
+  /**
+   * New command choice
+   * @param {string} name
+   * @param {string || int} value
+   */
   newChoice(name, value) {
     if (!name) {
       throw new Error("[Options Error] Choice name must not be null!");
@@ -81,6 +86,10 @@ module.exports = class OptionsBuilder {
     return this;
   }
 
+  /**
+   * Command option type Learn more here: https://discord.com/developers/docs/interactions/slash-commands#applicationcommandoptiontype
+   * @param {int} type
+   */
   type(type) {
     if (!type) {
       throw new Error("[Options Error] Type must not be null");

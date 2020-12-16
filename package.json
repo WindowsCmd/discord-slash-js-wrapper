@@ -1,0 +1,30 @@
+{
+  "name": "discord-slash-js-wrapper",
+  "version": "1.0.0",
+  "description": "A Simple Discord \"Slash\" Server JS Wrapper",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindowsCmd/Discord-slash-js-wrapper.git"
+  },
+  "keywords": [
+    "Discord",
+    "js",
+    "discord",
+    "slash",
+    "wrapper"
+  ],
+  "author": "Windows",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WindowsCmd/Discord-slash-js-wrapper/issues"
+  },
+  "homepage": "https://github.com/WindowsCmd/Discord-slash-js-wrapper#readme"
+}

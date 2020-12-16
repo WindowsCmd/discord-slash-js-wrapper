@@ -33,6 +33,10 @@ module.exports = class CommandBuilder {
     return this;
   }
 
+  /**
+   * Sets the description of the command
+   * @param {string} description
+   */
   description(description) {
     if (!description) {
       throw new Error(
@@ -47,6 +51,19 @@ module.exports = class CommandBuilder {
     }
 
     this.command.description = description;
+    return this;
+  }
+
+  /**
+   * Creates a new option for the command
+   * @param {OptionsBuilder} option
+   */
+  newOption(option) {
+    if (!option.option) {
+      throw new Error("[Command Error] Option must be of type OptionsBuilder!");
+    }
+
+    this.command.options.push(option.option);
     return this;
   }
 };
