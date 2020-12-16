@@ -13,7 +13,7 @@ const option = new slash.OptionsBuilder()
 
 const command = new slash.Command()
   .name("lul")
-  .description("just a test command");
+  .description("just a test command").newOption(option);
 
 (async () => {
 
