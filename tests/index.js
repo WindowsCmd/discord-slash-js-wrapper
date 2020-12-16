@@ -15,11 +15,13 @@ const option = new OptionsBuilder()
   .type(3);
 
 const command = new Command()
-  .name("owo")
+  .name("lul")
   .description("just a test command");
 
 (async () => {
-  //console.log(await client.getAllCommands());
+
+ // console.log(await client.deleteCommand('788595755996020786'));
+  console.log(await client.getAllCommands());
 })();
 
 
