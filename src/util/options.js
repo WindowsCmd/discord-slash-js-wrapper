@@ -11,7 +11,7 @@ module.exports = class OptionsBuilder {
       description: null,
       type: null,
       required: null,
-      choices: [],
+      choices: []
     };
   }
 

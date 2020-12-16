@@ -23,11 +23,35 @@ module.exports = class client {
       throw new Error("[Guild Commands] Guild ID has to be a number");
     }
     let url = `https://discord.com/api/v8/applications/${this.appId}/guilds/${guildid}/commands`;
+    let res = await axios
+      .post(url, command.command, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bot " + this.token,
+        },
+      })
+      .catch((error) => {
+        if (error.response) {
+          throw new Error(JSON.stringify(error.response.data));
+        }
+      });
+    return res.data;
+  }
 
-    let res = await axios.post(url, {
-      headers: { Authorization: `Bot ${this.token}` },
-      data: command,
-    });
+  async setCommand(command) {
+    let url = `https://discord.com/api/v8/applications/${this.appId}/commands`;
+    let res = await axios
+      .post(url, command.command, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bot " + this.token,
+        },
+      })
+      .catch((error) => {
+        if (error.response) {
+          throw new Error(JSON.stringify(error.response.data));
+        }
+      });
     return res.data;
   }
 };

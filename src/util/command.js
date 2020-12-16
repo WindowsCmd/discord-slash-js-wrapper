@@ -9,7 +9,7 @@ module.exports = class CommandBuilder {
     this.command = data.comamnd = {
       name: null,
       description: null,
-      options: [],
+      options: []
     };
   }
 

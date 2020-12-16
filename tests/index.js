@@ -9,15 +9,13 @@ const client = new Client(
 );
 
 const option = new OptionsBuilder()
-  .name("Cool Option")
+  .name("Cool")
   .description("Cool Description")
   .required(true)
-  .newChoice("Yes", "Poggers");
+  .type(3);
 
 const command = new Command()
-  .name("test")
-  .description("just a test command")
-  .newOption(option);
+  .name("owo")
+  .description("just a test command");
 
-client.setCommandGuild("732708260519346217", command);
-console.log(command);
+client.setCommand(command);
