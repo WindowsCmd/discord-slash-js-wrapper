@@ -1,10 +1,13 @@
 {
   "name": "discord-slash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Simple Discord \"Slash\" JS Wrapper",
   "main": "./src/index.js",
   "dependencies": {
-    "axios": "^0.21.0"
+    "axios": "^0.21.0",
+    "discord-interactions": "^1.4.1",
+    "ws": "^7.4.1",
+    "zlib-sync": "^0.1.7"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,6 +1,8 @@
 const axios = require("axios");
+const Websocket = require('./Gateway/Websocket');
+const { EventEmitter } = require('events');
 
-module.exports = class client {
+module.exports = class client extends EventEmitter{
   /**
    * Discord bot token
    * @param {string} token
@@ -9,10 +11,18 @@ module.exports = class client {
    * @param {string} appId
    * Your app id
    */
-  constructor(token, appId) {
+  constructor(token, appId, publicKey) {
+    super();
     this.token = token;
     this.appId = appId;
-    this.baseUrl = `https://discord.com/api/v8/applications/${this.appId}/`;
+    this.presence = null;
+    this.ws = new Websocket(this);
+    this.ws.on('ready', (user) => {
+      this.emit('ready', this);
+    });
+    this.ws.on('message',  (intetaction) => this.emit('interaction', intetaction))
+    this.ws.connect(this.token);
+
   }
 
   async setCommandGuild(guildid, command) {
