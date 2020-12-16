@@ -1,6 +1,4 @@
 const Client = require("../src/index");
-const OptionsBuilder = require("../src/util/options");
-const Command = require("../src/util/command");
 const MessageEmbed = require("../src/util/MessageEmbed");
 const Message = require("../src/util/message");
 
@@ -14,8 +12,8 @@ client.on("interaction", (data) => {
   client.respondToInteraction(
     new Message().addEmbed(
       new MessageEmbed()
-        .title("OwO!!")
-        .description("This is a cool feature discord... a really cool feature")
+        .title("discord-slash")
+        .description("A discord API wrapper for 'slash' commands")
         .thumbnail(
           "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F4BcVl0W57a8%2Fmaxresdefault.jpg&f=1&nofb=1"
         )
@@ -25,8 +23,8 @@ client.on("interaction", (data) => {
           `https://cdn.discordapp.com/avatars/${data.member.user.id}/${data.member.user.avatar}.png`
         )
         .newField(
-          "yes please",
-          "hello there fellow americans it is your president obama!",
+          "Get on NPM",
+          "https://www.npmjs.com/package/discord-slash",
           false
         )
     ),
