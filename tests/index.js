@@ -18,4 +18,8 @@ const command = new Command()
   .name("owo")
   .description("just a test command");
 
-client.setCommand(command);
+(async () => {
+  //console.log(await client.getAllCommands());
+})();
+
+

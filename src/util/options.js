@@ -11,7 +11,8 @@ module.exports = class OptionsBuilder {
       description: null,
       type: null,
       required: null,
-      choices: []
+      choices: [],
+      options: []
     };
   }
 
@@ -95,6 +96,19 @@ module.exports = class OptionsBuilder {
       throw new Error("[Options Error] Type must not be null");
     }
     this.option.type = type;
+    return this;
+  }
+
+  /**
+   * For a nested option
+   * @param {OptionsBuilder} option 
+   */
+  newOption(option) {
+    if (!option.option) {
+      throw new Error("[Command Error] Option must be of type OptionsBuilder!");
+    }
+
+    this.command.options.push(option.option);
     return this;
   }
 };

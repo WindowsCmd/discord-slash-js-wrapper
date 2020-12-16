@@ -54,4 +54,30 @@ module.exports = class client {
       });
     return res.data;
   }
+
+
+  async getAllCommands(){
+    let url = `https://discord.com/api/v8/applications/${this.appId}/commands`;
+
+    let res = await axios
+    .get(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bot " + this.token,
+      },
+    })
+    .catch((error) => {
+      if (error.response) {
+        throw new Error(JSON.stringify(error.response.data));
+      }
+    });
+
+    return res.data;
+  }
+
+  async deleteCommand(id){
+    if(!id){
+      throw new Error("[SlashJS Client]")
+    }
+  }
 };
