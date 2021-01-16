@@ -11,8 +11,8 @@ const { Client, MessageEmbed, Message } = require("discord-slash");
 
 const client = new Client("Token", "ClientID");
 
-client.on("ready", () => {
-  console.log("Connected and listining for intentions");
+client.once("ready", () => {
+  console.log("Connected and listening for interactions");
 });
 
 client.on("interaction", (data) => {
@@ -22,7 +22,7 @@ client.on("interaction", (data) => {
         .title("discord-slash")
         .description("A discord API wrapper for 'slash' commands")
         .thumbnail(
-          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F4BcVl0W57a8%2Fmaxresdefault.jpg&f=1&nofb=1"
+          "https://i.ytimg.com/vi/4BcVl0W57a8/maxresdefault.jpg"
         )
         .timestamp()
         .author(
