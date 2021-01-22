@@ -40,12 +40,6 @@ module.exports = class client extends (
     return await this.fetch(url, command.command, "post");
   }
 
-  async setCommand(command) {
-    let url = `https://discord.com/api/v8/applications/${this.appId}/commands`;
-
-    return await this.fetch(url, command.command, "post");
-  }
-
   async getAllCommands() {
     let url = `https://discord.com/api/v8/applications/${this.appId}/commands`;
     let res = await axios

@@ -1,7 +1,9 @@
 "use-strict";
+const axios = require("axios");
 
-module.exports = class CommandBuilder {
+module.exports = class CommandBuilder extends Client {
   constructor() {
+    super();
     this.setup({});
   }
 
@@ -65,5 +67,45 @@ module.exports = class CommandBuilder {
 
     this.command.options.push(option.option);
     return this;
+  }
+
+
+
+
+
+  set(guild = null){
+
+    if(!guild){
+      let url = `https://discord.com/api/v8/applications/${this.appId}/commands`;
+
+      return await this.fetch(url, this.command, "post");
+    } else {
+      if (isNaN(guild)) {
+        throw new Error("[Guild Commands] Guild ID has to be a number");
+      }
+      let url = `https://discord.com/api/v8/applications/${this.appId}/guilds/${guild}/commands`;
+  
+      return await this.fetch(url, this.command, "post");
+    }
+  }
+
+
+
+  async fetch(endpoint, body, method) {
+    let res = await axios({
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bot " + this.token,
+      },
+      method: method,
+      url: endpoint,
+      data: body,
+    }).catch((error) => {
+      if (error.response) {
+        throw new Error(JSON.stringify(error.response.data));
+      }
+    });
+
+    return res.data;
   }
 };
